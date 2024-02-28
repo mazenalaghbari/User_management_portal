@@ -16,7 +16,7 @@ This is a simple PHP application for user management. It allows users to registe
 - MySQL
 - HTML
 - CSS
-- JS
+- JS.
 
 ## Installation
 
