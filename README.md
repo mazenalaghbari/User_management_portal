@@ -1,53 +1,58 @@
-# PHP User Management Application
+# User Management Portal
 
-This is a simple PHP application for user management. It allows users to register, login, update their profiles, and view their information. Admins can also login, view a list of users, and update user information.
+## Description
+The User Management Portal is a web application that allows administrators to manage users and their roles.
 
 ## Features
-
-- User registration with username, password, and full name
-- User login authentication
-- User profile update functionality
-- Admin login with separate admin dashboard
-- Admin can view a list of users and update user information
+- User registration and login
+- CRUD operations for users
+- Assigning and managing roles for users
+- CRUD operations for roles
 
 ## Technologies Used
-
 - PHP
 - MySQL
+- Bootstrap
 - HTML
 - CSS
-- JS.
 
-## Installation
+## Setup
+1. **Database Setup:**
+   - Create a MySQL database named `user_management_portal`.
+   - Import the `database.sql` file to create the necessary tables.
 
-1. Clone the repository:
+2. **Configuration:**
+   - Update the `db_connection.php` file with your MySQL database credentials.
 
-```bash
-git clone https://github.com/your-username/php-user-management.git
-```
+3. **Running the Application:**
+   - Place the project files in your web server directory (e.g., `htdocs` for XAMPP, `www` for WAMP).
+   - Access the application through your web browser.
 
-1. Import the SQL file database.sql into your MySQL database to create the necessary tables.
+## Database Tables
+### users
+- **id** (INT, primary key, auto-increment) - The unique identifier for each user.
+- **username** (VARCHAR) - The username of the user.
+- **password** (VARCHAR) - The hashed password of the user.
+- **full_name** (VARCHAR) - The full name of the user.
+- **phone** (VARCHAR) - The phone number of the user.
+- **email** (VARCHAR) - The email address of the user.
 
-2. Update db_connection.php with your MySQL database credentials.
+### roles
+- **id** (INT, primary key, auto-increment) - The unique identifier for each role.
+- **name** (VARCHAR) - The name of the role.
+- **description** (TEXT) - The description of the role.
 
-3. Ensure your web server (e.g., Apache, Nginx) and PHP are properly configured.
+### user_roles
+- **user_id** (INT, foreign key) - The ID of the user assigned to a role.
+- **role_id** (INT, foreign key) - The ID of the role assigned to a user.
 
-4. Navigate to the project directory in your web server's document root.
-
-5. Access the application through your web browser (e.g., http://localhost/php-user-management).
-
-## Usage
-
-- Register as a new user using the registration form.
-- Login with your username and password.
-- Update your profile information if needed.
-- Admins can login with admin credentials.
-- Admins can view a list of users and update user information from the admin dashboard.
+## Screenshots
+Include screenshots of the application interface to provide a visual representation of the application.
 
 ## Credits
-
-This application was created by [Your Name].
+- [Bootstrap](https://getbootstrap.com/)
+- [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
 
 ## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE).
